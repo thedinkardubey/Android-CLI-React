@@ -1,101 +1,98 @@
-import Image from "next/image";
+import { Download, ChevronRight } from 'lucide-react'
+import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+import Link from 'next/link'
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="container mx-auto px-4">
+      <section className="py-12 md:py-20">
+        <div className="flex flex-col items-center text-center">
+          <Badge variant="outline" className="mb-4">v1.0.0 Now Available</Badge>
+          <h1 className="mb-6 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
+            Your Ultimate Mobile<br className="hidden sm:inline" />Command-Line Tool
+          </h1>
+          <p className="mb-8 max-w-[42rem] leading-normal text-muted-foreground sm:text-lg md:text-xl">
+            Execute powerful CLI commands directly on your Android device. Streamline your workflow with seamless file operations, all for free and open-source.
+          </p>
+          <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
+            <a href="https://github.com/thedinkardubey/Android-CLI/releases/download/v1.0.0/app-release.apk" download>
+              <Button size="lg" className="w-full sm:w-auto">
+                <Download className="mr-2 h-4 w-4" /> Download APK
+              </Button>
+            </a>
+            <Link href="/docs" passHref legacyBehavior>
+            {/* <a> */}
+              <Button variant="outline" size="lg" className="w-full sm:w-auto" asChild>
+                <a>
+                  View Documentation <ChevronRight className="ml-2 h-4 w-4" />
+                </a>
+              </Button>
+              {/* </a> */}
+            </Link>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      <section className="py-12 md:py-20">
+        <h2 className="mb-8 text-center text-2xl font-bold sm:text-3xl">Powerful CLI Features</h2>
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="rounded-lg border bg-card p-6">
+            <h3 className="mb-2 text-xl font-semibold">File Operations</h3>
+            <p className="text-muted-foreground">
+              Create, modify, and manage files directly from your Android device with simple commands.
+            </p>
+          </div>
+          <div className="rounded-lg border bg-card p-6">
+            <h3 className="mb-2 text-xl font-semibold">Directory Management</h3>
+            <p className="text-muted-foreground">
+              Navigate and organize your directories efficiently using familiar Unix-like commands.
+            </p>
+          </div>
+          <div className="rounded-lg border bg-card p-6">
+            <h3 className="mb-2 text-xl font-semibold">System Integration</h3>
+            <p className="text-muted-foreground">
+              Access system information and perform advanced operations through an intuitive command interface.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12 md:py-20">
+        <div className="rounded-lg border bg-card p-4 md:p-8">
+          <h2 className="mb-4 text-xl font-bold sm:text-2xl">Try It Out</h2>
+          <div className="rounded-md bg-black p-4 overflow-x-auto">
+            <pre className="text-xs sm:text-sm text-green-400">
+              <code>{`$ help
+Available Commands:
+  append    Append content to a file
+  cat       Display file contents
+  cd        Change directory
+  clear     Clear the terminal output
+  date      Print the current date and time
+  echo      Print a message
+  exit      Exits the app
+  help      Display this help message
+  history   Display the command history
+  ls        List directory contents
+  mkdir     Create a new directory
+  pwd       Print the current directory
+  rm        Remove a file
+  touch     Create a new file
+  whoami    Print the current username
+
+$ touch example.txt
+File example.txt created
+
+$ ls
+example.txt
+
+$ _`}</code>
+            </pre>
+          </div>
+        </div>
+      </section>
     </div>
-  );
+  )
 }
+

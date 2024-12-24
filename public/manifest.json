@@ -1,0 +1,19 @@
+{
+    "name": "Android CLI",
+    "short_name": "Android CLI",
+    "description": "Your ultimate mobile command-line tool",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#000000",
+    "theme_color": "#000000",
+    "icons": [
+      {
+        "src": "androidcli/app/favicon.ico",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "any maskable"
+      }
+    ]
+  }
+  
+  
